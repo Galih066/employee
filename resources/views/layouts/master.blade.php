@@ -7,10 +7,12 @@
         <title>@yield('title')</title>
 
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        @stack('custom-style')
     </head>
     <body>
         @yield('content')
 
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+        @stack('custom-js')
     </body>
 </html>

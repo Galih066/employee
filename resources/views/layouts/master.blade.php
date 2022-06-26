@@ -6,11 +6,16 @@
 
         <title>@yield('title')</title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        @stack('custom-style')
     </head>
-    <body>
+    <body style="font-family: 'Poppins', sans-serif">
         @yield('content')
 
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+        @stack('custom-js')
     </body>
 </html>

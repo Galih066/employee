@@ -9,33 +9,18 @@
 @section('content')
     @include('layouts.parts.navbarlandingpage')
 
-    <header class="masthead">
+    <header>
         <div class="container position-relative">
             <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="text-center text-white">
-                        <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
-                        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <div class="row">
-                                <div class="col">
-                                    <input class="form-control form-control-lg" placeholder="Email Address" />
-                                    <div class="invalid-feedback text-white">Email Address is required.</div>
-                                    <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
-                                </div>
-                                <div class="col-auto">
-                                    <button class="btn btn-primary btn-lg disabled" type="submit">Submit</button>
-                                </div>
-                            </div>
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                        <p>To activate this form, sign up at</p>
-                                </div>
-                            </div>
-                            <div class="d-none" id="submitErrorMessage">
-                                <div class="text-center text-danger mb-3">Error sending message!</div>
-                            </div>
-                        </form>
+                <div class="col">
+                    <img class="mx-auto d-block p-5 img-fluid" src="{{ asset('img/Company-amico.svg') }}" alt="img_header" />
+                </div>
+                <div class="col d-flex">
+                    <div class="align-self-center">
+                        <p class="text-secondary">Dolor sit amet</p>
+                        <p class="display-3 fw-bold">Lorem ipsum</p>
+                        <p class="h6 fw-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="btn btn-primary my-3" href="#">Getting Started</a>
                     </div>
                 </div>
             </div>

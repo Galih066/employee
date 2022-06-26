@@ -18,7 +18,7 @@ class AuthController extends Controller
         if (Auth::attempt(["email" => $request->email, "password" => $request->password])) {
             switch (Auth::user()->role) {
                 case 'ADMIN':
-                    return redirect()->route('');
+                    return redirect()->route('admin_dashboard');
                 case 'EMPLOYEE':
                     return redirect()->route('');
                 default:

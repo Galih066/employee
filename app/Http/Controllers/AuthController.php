@@ -16,7 +16,14 @@ class AuthController extends Controller
     public function authenticate (LoginRequest $request)
     {
         if (Auth::attempt(["email" => $request->email, "password" => $request->password])) {
-            return Auth::user()->role;
+            switch (Auth::user()->role) {
+                case 'ADMIN':
+                    return redirect()->route('');
+                case 'EMPLOYEE':
+                    return redirect()->route('');
+                default:
+                    return redirect()->route('login_page');
+            }
         }
  
         return back()->withErrors([

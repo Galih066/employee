@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AuthController::class, 'index'])->name('login_page');
+Route::post('/sendcredential', [AuthController::class, 'authenticate'])->name('send_credentials');

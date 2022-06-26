@@ -16,7 +16,7 @@ class AuthController extends Controller
     public function authenticate (LoginRequest $request)
     {
         if (Auth::attempt(["email" => $request->email, "password" => $request->password])) {
-            $request->session()->regenerate();
+            return Auth::user()->role;
         }
  
         return back()->withErrors([

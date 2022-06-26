@@ -3,8 +3,8 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-        <div class="w-25 p-3 shadow-sm">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="col-sm-3 col-md-6 col-lg-3 p-3 shadow">
             <p class="h5 fw-semibold text-primary my-5">Login Employee</p>
             <form method="POST" action="{{ route('send_credentials') }}">
                 @csrf
@@ -23,7 +23,9 @@
                     @enderror
                 </div>
 
-                <button class="btn btn-primary">Sign In</button>
+                <div class="text-end">
+                    <button class="btn btn-primary">Sign In</button>
+                </div>
             </form>
         </div>
     </div>

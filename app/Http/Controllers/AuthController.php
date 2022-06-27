@@ -20,7 +20,7 @@ class AuthController extends Controller
                 case 'ADMIN':
                     return redirect()->route('admin_dashboard');
                 case 'EMPLOYEE':
-                    return redirect()->route('');
+                    return redirect()->route('employee_dashboard');
                 default:
                     return redirect()->route('login_page');
             }

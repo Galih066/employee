@@ -2,9 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use Auth;
 use Closure;
 use Illuminate\Http\Request;
-use Auth;
+use App\Http\Controllers\Employee\EmployeeDashboardController;
 
 class AdminAuthorization
 {
@@ -22,6 +23,6 @@ class AdminAuthorization
             return $next($request);
         }
         
-        return redirect()->action([DashboardEmployeeController::class, 'index']);
+        return redirect()->action([EmployeeDashboardController::class, 'index']);
     }
 }

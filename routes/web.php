@@ -25,5 +25,5 @@ Route::post('/sendcredential', [AuthController::class, 'authenticate'])->name('s
 Route::middleware('auth')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin_dashboard');
-    });
+    })->middleware('adminAuthorization');
 });

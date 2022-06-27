@@ -23,7 +23,8 @@ Route::get('/login', [AuthController::class, 'index'])->name('login_page');
 Route::post('/sendcredential', [AuthController::class, 'authenticate'])->name('send_credentials');
 
 Route::middleware('auth')->group(function () {
-    Route::prefix('admin')->group(function () {
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::prefix('admin')->middleware('adminAuthorization')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin_dashboard');
-    })->middleware('adminAuthorization');
+    });
 });

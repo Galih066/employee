@@ -1,18 +1,19 @@
-<div class="border-end bg-white" id="sidebar-wrapper">
+<div class="bg-white border-end" id="sidebar-wrapper">
     @can('admin')
-        <div class="sidebar-heading border-bottom bg-light">Admin Employee</div>
+        <div class="sidebar-heading bg-white">Admin Employee</div>
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+            <a class="border-0 list-group-item list-group-item-action" href="#!">Dashboard</a>
+            <a class="border-0 list-group-item list-group-item-action" href="#!">Shortcuts</a>
+            <a class="border-0 list-group-item list-group-item-action" href="#!">Overview</a>
+            <a class="border-0 list-group-item list-group-item-action" href="#!">Events</a>
+            <a class="border-0 list-group-item list-group-item-action" href="#!">Profile</a>
+            <a class="border-0 list-group-item list-group-item-action" href="#!">Status</a>
         </div>
     @else
-        <div class="sidebar-heading border-bottom bg-light">Employee</div>
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
+        <div class="sidebar-heading bg-white">Employee</div>
+        <div class="list-group small list-group-flush">
+            <a class="border-0 list-group-item list-group-item-action" href="{{ route('employee_dashboard') }}">Dashboard</a>
+            <a class="border-0 list-group-item list-group-item-action" href="#!">Profile</a>
         </div>
     @endcan
 </div>

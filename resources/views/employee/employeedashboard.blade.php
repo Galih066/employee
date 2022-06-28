@@ -5,5 +5,7 @@
 @section('dashboard-title', 'Dashboard')
 
 @section('dashboard-content')
-    <p>test</p>
+    <div>
+        test
+    </div>
 @endsection

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Employee\ProfileEmployeeController;
 use App\Http\Controllers\Employee\EmployeeDashboardController;
 
 /*
@@ -31,5 +32,6 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('employee')->group(function () {
         Route::get('/dashboard', [EmployeeDashboardController::class, 'index'])->name('employee_dashboard');
+        Route::get('/profile', [ProfileEmployeeController::class, 'index'])->name('employee_profile');
     });
 });

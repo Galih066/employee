@@ -12,8 +12,8 @@
     @else
         <div class="sidebar-heading bg-white">Employee</div>
         <div class="list-group small list-group-flush">
-            <a class="border-0 list-group-item list-group-item-action" href="{{ route('employee_dashboard') }}">Dashboard</a>
-            <a class="border-0 list-group-item list-group-item-action" href="#!">Profile</a>
+            <a class="border-0 list-group-item list-group-item-action {{ (request()->is('employee/dashboard')) ? 'ps-4 active' : '' }}" href="{{ route('employee_dashboard') }}">Dashboard</a>
+            <a class="border-0 list-group-item list-group-item-action {{ (request()->is('employee/profile')) ? 'ps-4 active' : '' }}" href="{{ route('employee_profile') }}">My Profile</a>
         </div>
     @endcan
 </div>

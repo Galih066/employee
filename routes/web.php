@@ -33,5 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::prefix('employee')->group(function () {
         Route::get('/dashboard', [EmployeeDashboardController::class, 'index'])->name('employee_dashboard');
         Route::get('/profile', [ProfileEmployeeController::class, 'index'])->name('employee_profile');
+        Route::get('/provinces', [ProfileEmployeeController::class, 'provinces']);
+        Route::get('/cities', [ProfileEmployeeController::class, 'cities'])->name('cities');
+        Route::get('/districts', [ProfileEmployeeController::class, 'districts'])->name('districts');
+        Route::get('/villages', [ProfileEmployeeController::class, 'villages'])->name('villages');
     });
 });

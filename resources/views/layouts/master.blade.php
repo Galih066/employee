@@ -21,7 +21,7 @@
     <body style="font-family: 'Poppins', sans-serif">
         @yield('content')
 
-        <script src="{{ asset('js/jquery-3.6.0.slim.min.js') }}"></script>
+        <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
         @stack('custom-js')
     </body>

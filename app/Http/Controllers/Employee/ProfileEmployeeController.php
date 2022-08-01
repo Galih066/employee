@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Employee;
 
 use Indonesia;
 use App\Models\User;
+use App\Models\Religion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -11,7 +12,8 @@ class ProfileEmployeeController extends Controller
 {
     public function index ()
     {
-        return view ('employee.profile.index');
+        $religion = Religion::all();
+        return view ('employee.profile.index', compact('religion'));
     }
 
     public function provinces()

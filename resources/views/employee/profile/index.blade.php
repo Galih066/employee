@@ -52,28 +52,35 @@
                         aria-labelledby="pills-home-tab" tabindex="0">
                         <form action="#">
                             <div class="row mb-3">
-                                <label class="col-md-3 col-form-label text-capitalize" for="kecamatan">Gender</label>
+                                <label class="col-md-3 col-form-label text-capitalize" for="kecamatan">current address</label>
+                                <div class="col-md-9">
+                                    <input name="address" type="text" class="form-control"
+                                        placeholder="Address">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label text-capitalize" for="gender">Gender</label>
                                 <div class="col-md-9 row px-4 align-items-center">
                                     <div class="col-md-6 form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            id="male">
+                                        <label class="form-check-label" for="male">
                                             Male
                                         </label>
                                     </div>
                                     <div class="col-md-6 form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault2" checked>
-                                        <label class="form-check-label" for="flexRadioDefault2">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            id="female" checked>
+                                        <label class="form-check-label" for="female">
                                             Female
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-md-3 col-form-label text-capitalize" for="provinsi">religion</label>
+                                <label class="col-md-3 col-form-label text-capitalize" for="religion">religion</label>
                                 <div class="col-md-9">
-                                    <select class="form-select" name="provinsi" id="provinsi" required>
+                                    <select class="form-select" name="religion" id="religion" required>
                                         <option>Choose religion</option>
                                         @forelse ($religion as $item)
                                             <option value="{{ $item->id ?? '' }}">{{ $item->name ?? '' }}</option>
@@ -84,7 +91,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-md-3 col-form-label text-capitalize" for="kecamatan">date of
+                                <label class="col-md-3 col-form-label text-capitalize" for="dob">date of
                                     birth</label>
                                 <div class="col-md-9">
                                     <input name="dob" type="date" class="form-control"
@@ -92,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-md-3 col-form-label text-capitalize" for="kecamatan">place of
+                                <label class="col-md-3 col-form-label text-capitalize" for="pob">place of
                                     birth</label>
                                 <div class="col-md-9">
                                     <input name="pob" type="text" class="form-control"
@@ -100,13 +107,20 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-md-3 col-form-label text-capitalize" for="provinsi">provinces</label>
+                                <label class="col-md-3 col-form-label text-capitalize" for="postal_code">postal code</label>
+                                <div class="col-md-9">
+                                    <input name="postal_code" type="number" class="form-control"
+                                        placeholder="Kode Pos">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label text-capitalize" for="provinces">provinces</label>
                                 <div class="col-md-9">
                                     @php
                                         $provinces = new App\Http\Controllers\Employee\ProfileEmployeeController();
                                         $provinces = $provinces->provinces();
                                     @endphp
-                                    <select class="form-select" name="provinsi" id="provinsi" required>
+                                    <select class="form-select" name="provinces" id="provinces" required>
                                         <option>Choose provinces</option>
                                         @foreach ($provinces as $item)
                                             <option value="{{ $item->id ?? '' }}">{{ $item->name ?? '' }}</option>
@@ -115,30 +129,45 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-md-3 col-form-label text-capitalize" for="kota">city</label>
+                                <label class="col-md-3 col-form-label text-capitalize" for="city">city</label>
                                 <div class="col-md-9">
-                                    <select class="form-select" name="kota" id="kota" required>
+                                    <select class="form-select" name="city" id="city" required>
                                         <option>Choose Citys</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label class="col-md-3 col-form-label text-capitalize"
-                                    for="kecamatan">district</label>
+                                    for="district">district</label>
                                 <div class="col-md-9">
-                                    <select class="form-select" name="kecamatan" id="kecamatan" required>
+                                    <select class="form-select" name="district" id="district" required>
                                         <option class="text-secondary">Choose districts</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-md-3 col-form-label text-capitalize" for="desa">village</label>
+                                <label class="col-md-3 col-form-label text-capitalize" for="village">village</label>
                                 <div class="col-md-9">
-                                    <select class="form-select" name="desa" id="desa" required>
+                                    <select class="form-select" name="village" id="village" required>
                                         <option>Choose villages</option>
                                     </select>
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label text-capitalize" for="rt">RT</label>
+                                <div class="col-md-9">
+                                    <input name="rt" type="number" class="form-control" 
+                                        placeholder="RT">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label text-capitalize" for="rw">RW</label>
+                                <div class="col-md-9">
+                                    <input name="rw" type="number" class="form-control"
+                                        placeholder="RW">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success float-end">Save</button>
                         </form>
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel"

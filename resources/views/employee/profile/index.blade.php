@@ -206,14 +206,14 @@
         }
 
         $(function() {
-            $('#provinsi').change(function() {
-                onChangeSelect('{{ route('cities') }}', $(this).val(), 'kota');
+            $('#provinces').change(function() {
+                onChangeSelect('{{ route('cities') }}', $(this).val(), 'city');
             });
-            $('#kota').on('change', function() {
-                onChangeSelect('{{ route('districts') }}', $(this).val(), 'kecamatan');
+            $('#city').on('change', function() {
+                onChangeSelect('{{ route('districts') }}', $(this).val(), 'district');
             })
-            $('#kecamatan').on('change', function() {
-                onChangeSelect('{{ route('villages') }}', $(this).val(), 'desa');
+            $('#district').on('change', function() {
+                onChangeSelect('{{ route('villages') }}', $(this).val(), 'village');
             })
         });
     </script>

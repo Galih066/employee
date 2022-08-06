@@ -16,6 +16,7 @@ class AuthController extends Controller
     public function authenticate (LoginRequest $request)
     {
         if (Auth::attempt(["email" => $request->email, "password" => $request->password])) {
+            $request->session()->regenerate();
             switch (Auth::user()->role) {
                 case 'ADMIN':
                     return redirect()->route('admin_dashboard');

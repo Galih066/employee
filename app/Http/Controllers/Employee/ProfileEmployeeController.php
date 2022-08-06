@@ -40,7 +40,8 @@ class ProfileEmployeeController extends Controller
 
         if ($isUpdated)
         {
-            return true;
+            toastr()->success('Data has been updated successfully!');
+            return redirect()->route('employee_profile');
         }
 
         return false;

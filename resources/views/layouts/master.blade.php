@@ -6,6 +6,8 @@
 
         <title>@yield('title')</title>
 
+        
+
         {{-- GOOGLE FONT POPPINS --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +22,6 @@
     </head>
     <body style="font-family: 'Poppins', sans-serif">
         @yield('content')
-
         <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
         @stack('custom-js')

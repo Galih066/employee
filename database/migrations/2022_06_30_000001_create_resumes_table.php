@@ -24,6 +24,7 @@ class CreateResumesTable extends Migration
             $table->string('address')->nullable();
             $table->char('rt')->nullable();
             $table->char('rw')->nullable();
+            $table->string('provinsi')->nullable();
             $table->string('kelurahan')->nullable();
             $table->string('kecamatan')->nullable();
             $table->string('city')->nullable();

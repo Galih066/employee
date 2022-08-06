@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Employee;
 
 use Indonesia;
-use App\Models\User;
+use App\Models\Resume;
 use App\Models\Religion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\PersonalInfoRequest;
 
 class ProfileEmployeeController extends Controller
 {
@@ -16,23 +18,31 @@ class ProfileEmployeeController extends Controller
         return view ('employee.profile.index', compact('religion'));
     }
 
-    public function provinces()
+    public function updateResume (PersonalInfoRequest $request)
     {
-        return Indonesia::allProvinces();
-    }
+        $authUser = Auth::id();
+        $userResume = Resume::find($authUser);
+        
+        $userResume->address = $request->address;
+        $userResume->gender = $request->gender;
+        $userResume->religion_id = $request->religion;
+        $userResume->date_of_birth = $request->dob;
+        $userResume->place_of_birth = $request->pob;
+        $userResume->kodepos = $request->postal_code;
+        $userResume->provinsi = $request->provinces;
+        $userResume->city = $request->city;
+        $userResume->kecamatan = $request->kecamatan;
+        $userResume->kelurahan = $request->kelurahan;
+        $userResume->rt = $request->rt;
+        $userResume->rw = $request->rw;
 
-    public function cities(Request $request)
-    {
-        return Indonesia::findProvince($request->id, ['cities'])->cities->pluck('name', 'id');
-    }
+        $isUpdated = $userResume->save();
 
-    public function districts(Request $request)
-    {
-        return Indonesia::findCity($request->id, ['districts'])->districts->pluck('name', 'id');
-    }
+        if ($isUpdated)
+        {
+            return true;
+        }
 
-    public function villages(Request $request)
-    {
-        return Indonesia::findDistrict($request->id, ['villages'])->villages->pluck('name', 'id');
+        return false;
     }
 }

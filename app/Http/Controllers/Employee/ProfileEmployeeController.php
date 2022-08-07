@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Employee;
 
 use Indonesia;
+use App\Models\Job;
 use App\Models\Resume;
 use App\Models\Jenjang;
 use App\Models\Religion;
@@ -17,8 +18,9 @@ class ProfileEmployeeController extends Controller
     {
         $religion   = Religion::all();
         $jenjang    = Jenjang::all();
+        $job        = Job::all();
 
-        return view ('employee.profile.index', compact('religion', 'jenjang'));
+        return view ('employee.profile.index', compact('religion', 'jenjang', 'job'));
     }
 
     public function updateResume (PersonalInfoRequest $request)

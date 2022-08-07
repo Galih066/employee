@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
+use Database\Seeders\JenjangSeeder;
 use Database\Seeders\ReligionSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,8 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserSeeder::class);
-        $this->call(ReligionSeeder::class);
+        $this->call([
+            UserSeeder::class,
+            ReligionSeeder::class,
+            JenjangSeeder::class,
+        ]);
         // User::factory(10)->create();
     }
 }

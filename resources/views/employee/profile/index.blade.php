@@ -18,34 +18,27 @@
         </div>
         <div class="col-md-12 col-lg-9">
             <div class="card card-body shadow-sm border-0">
-                <p class="fw-bold">Please fill up your resume</p>
+                <p class="fw-bold mb-4">Please fill up your resume</p>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-personal"
                             aria-selected="true">
                             Personal Info
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        <button class="nav-link" id="pills-parent-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-parent" type="button" role="tab" aria-controls="pills-parent"
                             aria-selected="false">
-                            Profile
+                            Parent Data
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        <button class="nav-link" id="pills-edu-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-education" type="button" role="tab" aria-controls="pills-education"
                             aria-selected="false">
-                            Contact
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-disabled" type="button" role="tab"
-                            aria-controls="pills-disabled" aria-selected="false" disabled>
-                            Disabled
+                            Education Data
                         </button>
                     </li>
                 </ul>
@@ -54,17 +47,13 @@
                         aria-labelledby="pills-home-tab" tabindex="0">
                         @includeIf('layouts.parts.profile.personaldata')
                     </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                        aria-labelledby="pills-profile-tab" tabindex="0">
-                        ...
+                    <div class="tab-pane fade" id="pills-parent" role="tabpanel"
+                        aria-labelledby="pills-parent-tab" tabindex="0">
+                        @includeIf('layouts.parts.profile.parentdata')
                     </div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                        aria-labelledby="pills-contact-tab" tabindex="0">
-                        ...
-                    </div>
-                    <div class="tab-pane fade" id="pills-disabled" role="tabpanel"
-                        aria-labelledby="pills-disabled-tab" tabindex="0">
-                        ...
+                    <div class="tab-pane fade" id="pills-education" role="tabpanel"
+                        aria-labelledby="pills-edu-tab" tabindex="0">
+                        Education data
                     </div>
                 </div>
             </div>

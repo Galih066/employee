@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Employee;
 
 use Indonesia;
 use App\Models\Resume;
+use App\Models\Jenjang;
 use App\Models\Religion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,13 +15,15 @@ class ProfileEmployeeController extends Controller
 {
     public function index ()
     {
-        $religion = Religion::all();
-        return view ('employee.profile.index', compact('religion'));
+        $religion   = Religion::all();
+        $jenjang    = Jenjang::all();
+
+        return view ('employee.profile.index', compact('religion', 'jenjang'));
     }
 
     public function updateResume (PersonalInfoRequest $request)
     {
-        $authUser = Auth::id();
+        $authUser   = Auth::id();
         $userResume = Resume::find($authUser);
         
         $userResume->address = $request->address;
@@ -37,7 +40,7 @@ class ProfileEmployeeController extends Controller
         $userResume->rw = $request->rw;
         $userResume->ethnic = $request->ethnic;
 
-        $isUpdated = $userResume->save();
+        $isUpdated  = $userResume->save();
 
         if ($isUpdated)
         {

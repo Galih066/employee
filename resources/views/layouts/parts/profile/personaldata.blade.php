@@ -3,7 +3,7 @@
     <div class="row mb-3">
         <label class="col-md-3 col-form-label text-capitalize" for="kecamatan">current address</label>
         <div class="col-md-9">
-            <input name="address" type="text" class="form-control" placeholder="Address">
+            <input name="address" value="{{ old('address') }}" type="text" class="form-control" placeholder="Address">
             @error('address')
                 <p class="small text-danger">{{ $message }}</p>
             @enderror
@@ -32,7 +32,7 @@
     <div class="row mb-3">
         <label class="col-md-3 col-form-label text-capitalize" for="religion">religion</label>
         <div class="col-md-9">
-            <select class="form-select" name="religion" id="religion" required>
+            <select class="form-select" name="religion" id="religion" required>    
                 <option value="">Choose religion</option>
                 @forelse ($religion as $item)
                     <option value="{{ $item->id ?? '' }}">{{ $item->name ?? '' }}</option>

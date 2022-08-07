@@ -41,9 +41,10 @@ class ProfileEmployeeController extends Controller
         if ($isUpdated)
         {
             toastr()->success('Data has been updated successfully!');
-            return redirect()->route('employee_profile');
+            return redirect()->route('employee_profile')->withInput();
         }
 
-        return false;
+        toastr()->error('Failed to update the data. Please check the input');
+        return redirect()->route('employee_profile')->withInput();
     }
 }

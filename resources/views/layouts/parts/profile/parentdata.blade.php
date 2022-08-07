@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('updatePersonalData') }}">
+<form method="POST" action="{{ route('updateParentData') }}">
     @csrf
     <p class="fw-semibold mt-3">
         <i class="fa-solid fa-person me-2"></i>
@@ -76,7 +76,7 @@
     <div class="row mb-3">
         <label class="col-md-3 col-form-label text-capitalize text-muted">Name</label>
         <div class="col-md-9">
-            <input name="motherName" value="{{ old('motherName') }}" type="text" class="form-control" placeholder="mother's name">
+            <input name="motherName" value="{{ old('motherName') }}" type="text" class="form-control" placeholder="Mother's name">
             @error('motherName')
                 <p class="small text-danger">{{ $message }}</p>
             @enderror
@@ -85,7 +85,7 @@
     <div class="row mb-3">
         <label class="col-md-3 col-form-label text-capitalize text-muted">Address</label>
         <div class="col-md-9">
-            <input name="motherAddress" value="{{ old('motherAddress') }}" type="text" class="form-control" placeholder="mother's address">
+            <input name="motherAddress" value="{{ old('motherAddress') }}" type="text" class="form-control" placeholder="Mother's address">
             @error('motherAddress')
                 <p class="small text-danger">{{ $message }}</p>
             @enderror

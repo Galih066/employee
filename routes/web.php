@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/districts', [FormPersonalDataController::class, 'districts'])->name('districts');
         Route::get('/villages', [FormPersonalDataController::class, 'villages'])->name('villages');
 
-        Route::post('/sendpersonaldata', [ProfileEmployeeController::class, 'updateResume'])->name('updatePersonalData');
+        Route::post('/sendpersonaldata', [ProfileEmployeeController::class, 'updatePersonalData'])->name('updatePersonalData');
+        Route::post('/sendparentdata', [ProfileEmployeeController::class, 'updateParentData'])->name('updateParentData');
     });
 });

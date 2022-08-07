@@ -23,7 +23,7 @@ class ProfileEmployeeController extends Controller
         return view ('employee.profile.index', compact('religion', 'jenjang', 'job'));
     }
 
-    public function updateResume (PersonalInfoRequest $request)
+    public function updatePersonalData (PersonalInfoRequest $request)
     {
         $authUser   = Auth::id();
         $userResume = Resume::find($authUser);
@@ -52,5 +52,10 @@ class ProfileEmployeeController extends Controller
 
         toastr()->error('Failed to update the data. Please check the input');
         return redirect()->route('employee_profile')->withInput();
+    }
+
+    public function updateParentData (Request $request)
+    {
+        return $request->all();
     }
 }

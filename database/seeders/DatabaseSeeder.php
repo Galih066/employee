@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\JobSeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\JenjangSeeder;
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ReligionSeeder::class,
             JenjangSeeder::class,
+            JobSeeder::class,
         ]);
         // User::factory(10)->create();
     }

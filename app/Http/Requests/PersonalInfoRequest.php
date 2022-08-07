@@ -36,6 +36,7 @@ class PersonalInfoRequest extends FormRequest
             'kelurahan' => 'required',
             'rt' => 'required|numeric',
             'rw' => 'required|numeric',
+            'ethnic' => 'required',
         ];
     }
 }

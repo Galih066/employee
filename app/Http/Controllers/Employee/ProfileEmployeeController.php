@@ -35,6 +35,7 @@ class ProfileEmployeeController extends Controller
         $userResume->kelurahan = $request->kelurahan;
         $userResume->rt = $request->rt;
         $userResume->rw = $request->rw;
+        $userResume->ethnic = $request->ethnic;
 
         $isUpdated = $userResume->save();
 

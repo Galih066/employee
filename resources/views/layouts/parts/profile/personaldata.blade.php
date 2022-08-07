@@ -143,6 +143,15 @@
             @enderror
         </div>
     </div>
+    <div class="row mb-3">
+        <label class="col-md-3 col-form-label text-capitalize" for="kecamatan">ethnic</label>
+        <div class="col-md-9">
+            <input name="ethnic" value="{{ old('ethnic') }}" type="text" class="form-control" placeholder="Ethnic">
+            @error('ethnic')
+                <p class="small text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+    </div>
     <button type="submit" class="btn btn-success float-end">Save</button>
 </form>
 

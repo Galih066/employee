@@ -136,5 +136,8 @@
             @enderror
         </div>
     </div>
-    <button type="submit" class="btn btn-success float-end">Save</button>
+    <button type="submit" class="btn btn-primary float-end">
+        <i class="fa-regular fa-floppy-disk me-2"></i>
+        Save
+    </button>
 </form>

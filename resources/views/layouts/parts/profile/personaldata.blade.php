@@ -3,7 +3,7 @@
     <div class="row mb-3">
         <label class="col-md-3 col-form-label text-capitalize" for="kecamatan">current address</label>
         <div class="col-md-9">
-            <input name="address" value="{{ old('address') }}" type="text" class="form-control" placeholder="Address">
+            <input name="address" value="{{ old('address') }}" type="text" class="form-control" placeholder="Address" required>
             @error('address')
                 <p class="small text-danger">{{ $message }}</p>
             @enderror
@@ -13,13 +13,13 @@
         <label class="col-md-3 col-form-label text-capitalize" for="gender">Gender</label>
         <div class="col-md-9 row px-4 align-items-center">
             <div class="col-md-6 form-check">
-                <input value="Male" class="form-check-input" type="radio" name="gender" id="male">
+                <input value="Male" class="form-check-input" type="radio" name="gender" id="male" required>
                 <label class="form-check-label" for="male">
                     Male
                 </label>
             </div>
             <div class="col-md-6 form-check">
-                <input value="Female" class="form-check-input" type="radio" name="gender" id="female" checked>
+                <input value="Female" class="form-check-input" type="radio" name="gender" id="female" checked required>
                 <label class="form-check-label" for="female">
                     Female
                 </label>
@@ -152,7 +152,10 @@
             @enderror
         </div>
     </div>
-    <button type="submit" class="btn btn-success float-end">Save</button>
+    <button type="submit" class="btn btn-primary float-end">
+        <i class="fa-regular fa-floppy-disk me-2"></i>
+        Save
+    </button>
 </form>
 
 @push('dashboard-custom-js')

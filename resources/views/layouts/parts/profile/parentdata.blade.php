@@ -14,6 +14,16 @@
         </div>
     </div>
     <div class="row mb-3">
+        <label class="col-md-3 col-form-label text-capitalize text-muted" for="fatherDob">date of
+            birth</label>
+        <div class="col-md-9">
+            <input name="fatherDob" type="date" class="form-control" placeholder="Date of birth">
+            @error('fatherDob')
+                <p class="small text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+    </div>
+    <div class="row mb-3">
         <label class="col-md-3 col-form-label text-capitalize text-muted">Address</label>
         <div class="col-md-9">
             <input name="fatherAddress" value="{{ old('fatherAddress') }}" type="text" class="form-control" placeholder="Father's address">
@@ -78,6 +88,16 @@
         <div class="col-md-9">
             <input name="motherName" value="{{ old('motherName') }}" type="text" class="form-control" placeholder="Mother's name">
             @error('motherName')
+                <p class="small text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-md-3 col-form-label text-capitalize text-muted" for="motherDob">date of
+            birth</label>
+        <div class="col-md-9">
+            <input name="motherDob" type="date" class="form-control" placeholder="Date of birth">
+            @error('motherDob')
                 <p class="small text-danger">{{ $message }}</p>
             @enderror
         </div>

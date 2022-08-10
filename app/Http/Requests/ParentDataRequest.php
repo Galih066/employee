@@ -24,7 +24,18 @@ class ParentDataRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'fatherName' => 'required',
+            'fatherDob' => 'required',
+            'fatherAddress' => 'required',
+            'fatherEducation' => 'required',
+            'fatherJob' => 'required',
+            'fatherStatus' => 'required',
+            'motherName' => 'required',
+            'motherDob' => 'required',
+            'motherAddress' => 'required',
+            'motherEducation' => 'required',
+            'motherJob' => 'required',
+            'motherStatus' => 'required',
         ];
     }
 }

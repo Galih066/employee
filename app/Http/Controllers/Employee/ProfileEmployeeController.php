@@ -10,6 +10,7 @@ use App\Models\Religion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ParentDataRequest;
 use App\Http\Requests\PersonalInfoRequest;
 
 class ProfileEmployeeController extends Controller
@@ -54,8 +55,33 @@ class ProfileEmployeeController extends Controller
         return redirect()->route('employee_profile')->withInput();
     }
 
-    public function updateParentData (Request $request)
+    public function updateParentData (ParentDataRequest $request)
     {
-        return $request->all();
+        $authUser   = Auth::id();
+        $parentResume = Resume::find($authUser);
+
+        $parentResume->father_name = $request->fatherName;
+        $parentResume->father_dob = $request->fatherDob;
+        $parentResume->father_address = $request->fatherAddress;
+        $parentResume->father_education = $request->fatherEducation;
+        $parentResume->father_job = $request->fatherJob;
+        $parentResume->father_status = $request->fatherStatus;
+        $parentResume->mother_name = $request->motherName;
+        $parentResume->mother_dob = $request->motherDob;
+        $parentResume->mother_address = $request->motherAddress;
+        $parentResume->mother_education = $request->motherEducation;
+        $parentResume->mother_job = $request->motherJob;
+        $parentResume->mother_status = $request->motherStatus;
+
+        $isUpdated  = $parentResume->save();
+
+        if ($isUpdated)
+        {
+            toastr()->success('Data has been updated successfully!');
+            return redirect()->route('employee_profile')->withInput();
+        }
+
+        toastr()->error('Failed to update the data. Please check the input');
+        return redirect()->route('employee_profile')->withInput();
     }
 }

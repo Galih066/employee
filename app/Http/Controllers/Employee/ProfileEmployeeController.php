@@ -47,7 +47,7 @@ class ProfileEmployeeController extends Controller
 
         if ($isUpdated)
         {
-            toastr()->success('Data has been updated successfully!');
+            toastr()->success('Your personal data has been updated successfully!');
             return redirect()->route('employee_profile')->withInput();
         }
 
@@ -77,7 +77,7 @@ class ProfileEmployeeController extends Controller
 
         if ($isUpdated)
         {
-            toastr()->success('Data has been updated successfully!');
+            toastr()->success('Your parent data has been updated successfully!');
             return redirect()->route('employee_profile')->withInput();
         }
 

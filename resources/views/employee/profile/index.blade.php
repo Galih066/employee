@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-12 col-lg-9">
             <div class="card card-body shadow-sm border-0">
-                <p class="fw-bold mb-4">Please fill up your resume</p>
+                <p class="fw-semibold text-secondary mb-4">Please fill up your resume</p>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
@@ -43,7 +43,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                    <div class="tab-pane fade" id="pills-home" role="tabpanel"
                         aria-labelledby="pills-home-tab" tabindex="0">
                         @includeIf('layouts.parts.profile.personaldata')
                     </div>
@@ -51,9 +51,9 @@
                         aria-labelledby="pills-parent-tab" tabindex="0">
                         @includeIf('layouts.parts.profile.parentdata')
                     </div>
-                    <div class="tab-pane fade" id="pills-education" role="tabpanel"
+                    <div class="tab-pane fade show active" id="pills-education" role="tabpanel"
                         aria-labelledby="pills-edu-tab" tabindex="0">
-                        Education data
+                        @includeIf('layouts.parts.profile.educationdata')
                     </div>
                 </div>
             </div>

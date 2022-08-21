@@ -14,7 +14,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Email</label>
-                    <input autofocus name="email" type="email" class="form-control" id="formEmail" placeholder="name@example.com">
+                    <input autofocus autocomplete="off" name="email" type="email" class="form-control" id="formEmail" placeholder="name@example.com">
                     @error('email')
                         <p class="small text-danger">{{ $message }}</p>
                     @enderror

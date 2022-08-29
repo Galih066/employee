@@ -54,6 +54,11 @@ class CreateResumesTable extends Migration
             $table->string('senior_hi_school_city')->nullable();
             $table->string('senior_hi_school_year_enter')->nullable();
             $table->string('senior_hi_school_year_graduate')->nullable();
+            $table->string('university_name')->nullable();
+            $table->string('gpa')->nullable();
+            $table->string('university_year_enter')->nullable();
+            $table->string('university_year_graduate')->nullable();
+            $table->string('university_city')->nullable();
             $table->timestamps();
         });
     }

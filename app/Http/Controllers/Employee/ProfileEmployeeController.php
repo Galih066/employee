@@ -10,6 +10,7 @@ use App\Models\Religion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\EducationRequest;
 use App\Http\Requests\ParentDataRequest;
 use App\Http\Requests\PersonalInfoRequest;
 
@@ -83,5 +84,26 @@ class ProfileEmployeeController extends Controller
 
         toastr()->error('Failed to update the data. Please check the input');
         return redirect()->route('employee_profile')->withInput();
+    }
+
+    public function updateEduData (EducationRequest $request)
+    {
+        $authUser   = Auth::id();
+        $educationResume = Resume::find($authUser);
+
+        $educationResume->junior_school_name = $request->fatherName;
+        $educationResume->junior_school_city = $request->fatherDob;
+        $educationResume->junior_school_year_enter = $request->fatherAddress;
+        $educationResume->junior_school_year_graduate = $request->fatherEducation;
+        $educationResume->father_job = $request->fatherJob;
+        $educationResume->junior_hi_school_name = $request->fatherStatus;
+        $educationResume->junior_hi_school_city = $request->motherName;
+        $educationResume->junior_hi_school_year_enter = $request->motherDob;
+        $educationResume->junior_hi_school_year_graduate = $request->motherAddress;
+        $educationResume->senior_hi_school_name = $request->motherEducation;
+        $educationResume->senior_hi_school_city = $request->motherJob;
+        $educationResume->senior_hi_school_year_enter = $request->motherStatus;
+        $educationResume->senior_hi_school_year_graduate = $request->motherStatus;
+        return $request->all();
     }
 }

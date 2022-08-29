@@ -41,5 +41,6 @@ Route::middleware('auth')->group(function () {
 
         Route::post('/sendpersonaldata', [ProfileEmployeeController::class, 'updatePersonalData'])->name('updatePersonalData');
         Route::post('/sendparentdata', [ProfileEmployeeController::class, 'updateParentData'])->name('updateParentData');
+        Route::post('/sendedudata', [ProfileEmployeeController::class, 'updateEduData'])->name('updateEduData');
     });
 });

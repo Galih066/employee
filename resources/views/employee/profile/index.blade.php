@@ -43,7 +43,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade" id="pills-home" role="tabpanel"
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                         aria-labelledby="pills-home-tab" tabindex="0">
                         @includeIf('layouts.parts.profile.personaldata')
                     </div>
@@ -51,7 +51,7 @@
                         aria-labelledby="pills-parent-tab" tabindex="0">
                         @includeIf('layouts.parts.profile.parentdata')
                     </div>
-                    <div class="tab-pane fade show active" id="pills-education" role="tabpanel"
+                    <div class="tab-pane fade" id="pills-education" role="tabpanel"
                         aria-labelledby="pills-edu-tab" tabindex="0">
                         @includeIf('layouts.parts.profile.educationdata')
                     </div>

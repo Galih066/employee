@@ -144,6 +144,19 @@
         </div>
     </div>
     <div class="row mb-3">
+        <label class="col-md-3 col-form-label text-capitalize text-muted" for="maritalStat">Status</label>
+        <div class="col-md-9">
+            <select class="form-select" name="maritalStat" id="maritalStat" required>    
+                <option value="">Choose marital status</option>
+                <option value="1">Married</option>
+                <option value="2">Not Married</option>
+            </select>
+            @error('maritalStat')
+                <p class="small text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+    </div>
+    <div class="row mb-3">
         <label class="col-md-3 col-form-label text-capitalize" for="kecamatan">ethnic</label>
         <div class="col-md-9">
             <input name="ethnic" value="{{ old('ethnic') }}" type="text" class="form-control" placeholder="Ethnic">

@@ -121,4 +121,9 @@ class ProfileEmployeeController extends Controller
         toastr()->error('Failed to update the data. Please check the input');
         return redirect()->route('employee_profile')->withInput();
     }
+
+    public function uploadProfilePhoto (Request $request)
+    {
+        return $request->photo;
+    }
 }
